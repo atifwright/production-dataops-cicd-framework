@@ -108,9 +108,9 @@ resource "aws_iam_role_policy" "github_deployer" {
     Version = "2012-10-17"
     Statement = [
       {
-        Sid      = "ManagePipelineArtifactBucket"
-        Effect   = "Allow"
-        Action   = [
+        Sid    = "ManagePipelineArtifactBucket"
+        Effect = "Allow"
+        Action = [
           "s3:CreateBucket",
           "s3:DeleteBucket",
           "s3:GetBucketLocation",
@@ -162,9 +162,9 @@ resource "aws_iam_role_policy" "github_deployer" {
         }
       },
       {
-        Sid      = "ManageEnvironmentTerraformState"
-        Effect   = "Allow"
-        Action   = ["s3:GetObject", "s3:PutObject", "s3:DeleteObject"]
+        Sid    = "ManageEnvironmentTerraformState"
+        Effect = "Allow"
+        Action = ["s3:GetObject", "s3:PutObject", "s3:DeleteObject"]
         Resource = [
           "arn:${data.aws_partition.current.partition}:s3:::${var.terraform_state_bucket_name}/${var.terraform_state_key}",
           "arn:${data.aws_partition.current.partition}:s3:::${var.terraform_state_bucket_name}/${var.terraform_state_key}.tflock"
