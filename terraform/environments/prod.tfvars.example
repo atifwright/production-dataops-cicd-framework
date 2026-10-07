@@ -1,0 +1,13 @@
+aws_region          = "us-east-1"
+project_name        = "dataops"
+environment         = "prod"
+artifact_bucket_name = "replace-with-globally-unique-prod-bucket-name"
+github_repository   = "atifwright/production-dataops-cicd-framework"
+github_environment  = "production"
+terraform_state_bucket_name = "replace-with-preexisting-state-bucket"
+terraform_state_key = "production-dataops/prod/terraform.tfstate"
+
+tags = {
+  CostCenter = "data-platform"
+  Criticality = "high"
+}
